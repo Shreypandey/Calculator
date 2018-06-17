@@ -298,6 +298,11 @@ double calculate(String exp){
         bEqual.setFont(new java.awt.Font("Ubuntu", 0, 25)); // NOI18N
         bEqual.setForeground(java.awt.Color.white);
         bEqual.setText("=");
+        bEqual.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bEqualActionPerformed(evt);
+            }
+        });
         getContentPane().add(bEqual, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 480, 100, 100));
 
         bDel.setBackground(java.awt.Color.darkGray);
@@ -513,6 +518,10 @@ fExp.setText(newExp); // TODO add your handling code here:
     private void bHistoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bHistoryActionPerformed
 System.out.println(s1[0]+" "+s1[1]+" "+s1[2]+" "+s1[3]);        // TODO add your handling code here:
     }//GEN-LAST:event_bHistoryActionPerformed
+
+    private void bEqualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bEqualActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bEqualActionPerformed
 
     /**
      * @param args the command line arguments
