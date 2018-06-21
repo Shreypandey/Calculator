@@ -141,6 +141,8 @@ double calculate(String exp){
         bPlus = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Calculator");
+        setResizable(false);
         setSize(new java.awt.Dimension(450, 580));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -361,6 +363,7 @@ double calculate(String exp){
         getContentPane().add(bPlus, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 500, 80, 80));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 private void myinitComponents(){
 fExp.setHorizontalAlignment(SwingConstants.RIGHT);
@@ -477,38 +480,46 @@ fExp.setText(newExp); // TODO add your handling code here:
 
     private void bMultiplyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bMultiplyActionPerformed
         if(newExp.endsWith("+")||newExp.endsWith("-")||newExp.endsWith("×")||newExp.endsWith("÷")){
-       newExp=newExp.substring(0, newExp.length()-1)+"×";}
-       else
+       newExp=newExp.substring(0, newExp.length()-1)+"×";
+         s1[--index]="*";
+       index++;
+        }
+        else{
         newExp+="×";
        fExp.setText(newExp);
        index++;
        s1[index]+="*";
-       index++;
+       index++;}
+        fExp.setText(newExp);
         // TODO add your handling code here:
     }//GEN-LAST:event_bMultiplyActionPerformed
 
     private void bMinusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bMinusActionPerformed
         if(newExp.endsWith("+")||newExp.endsWith("-")||newExp.endsWith("×")||newExp.endsWith("÷")){
-       newExp=newExp.substring(0, newExp.length()-1)+"-";}
-       else
+       newExp=newExp.substring(0, newExp.length()-1)+"-";
+        s1[--index]="-";
+       index++;}
+        else{
         newExp+="-";
-       fExp.setText(newExp);
        index++;
        s1[index]+="-";
        index++;
-        
+        }
+        fExp.setText(newExp);
     }//GEN-LAST:event_bMinusActionPerformed
 
     private void bPlusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bPlusActionPerformed
         if(newExp.endsWith("+")||newExp.endsWith("-")||newExp.endsWith("×")||newExp.endsWith("÷")){
-       newExp=newExp.substring(0, newExp.length()-1)+"+";}
-       else
+       newExp=newExp.substring(0, newExp.length()-1)+"+";
+        s1[--index]="+";
+       index++;}
+        else{
         newExp+="+";
-       fExp.setText(newExp);
+      
        index++;
        s1[index]+="+";
-       index++;
-        
+       index++;}
+       fExp.setText(newExp);  
     }//GEN-LAST:event_bPlusActionPerformed
 
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
