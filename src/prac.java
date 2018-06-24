@@ -119,7 +119,7 @@ public class prac  {
                 if(s.startsWith("m")){}
 		else{
 		try{
-			Double.parseDouble(s1);
+			prac.parse(s1);
 		}
 		catch(Exception e){
 			s=s.replace("-","m");
@@ -142,17 +142,17 @@ public class prac  {
 	}
 	static String exbin(String s){
 		String ans="";
-		if(s.indexOf("+-")!=-1){
+		if(s.contains("+-")){
 			s=s.substring(0,s.indexOf("+-"))+s.substring(s.indexOf("+-")+1);
 		}
 		if(s.charAt(0)=='-'){s="m"+s.substring(1);}
 		int pi=s.indexOf("+"),mi=s.indexOf("-"),mui=s.indexOf("*"),di=s.indexOf("/"),ei=s.indexOf("^");
 		int i=-1;
-		if(s.indexOf("+")==(-1))pi=Integer.MAX_VALUE;
-		if(s.indexOf("-")==(-1))mi=Integer.MAX_VALUE;
-		if(s.indexOf("*")==(-1))mui=Integer.MAX_VALUE;
-		if(s.indexOf("/")==(-1))di=Integer.MAX_VALUE;
-		if(s.indexOf("^")==(-1))ei=Integer.MAX_VALUE;		
+		if(!s.contains("+"))pi=Integer.MAX_VALUE;
+		if(!s.contains("-"))mi=Integer.MAX_VALUE;
+		if(!s.contains("*"))mui=Integer.MAX_VALUE;
+		if(!s.contains("/"))di=Integer.MAX_VALUE;
+		if(!s.contains("^"))ei=Integer.MAX_VALUE;		
 		int j=Math.min(Math.min(Math.min(pi,mi),Math.min(mui,di)),ei);
 		int k=j+1;
 		//System.out.println(pi+" "+mi+" "+mui+" "+di+" "+ei);
