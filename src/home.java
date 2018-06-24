@@ -1,5 +1,4 @@
 
-import java.util.Arrays;
 import javax.swing.SwingConstants;
 
 /*
@@ -14,91 +13,8 @@ import javax.swing.SwingConstants;
  */
 public class home extends javax.swing.JFrame {
 String newExp="";
-int index=0;
-String[] s1=new String[300];
-String[] s2=new String[300];
-double calculate(String exp){
-    System.arraycopy(s1,0,s2,0,s1.length);
-    int temp,n1,n2;
-    for(int i=0;i<s2.length;i++){
-        if(s2[i].equals("/")){
-            temp=i;
-            for(n1=1;;n1++){
-            if(!"".equals(s2[temp-n1]))break;
-            }
-            for(n2=1;;n2++){
-                try{
-            if(!"".equals(s2[temp+n2]))break;
-            }
-            catch(Exception e){break;}}
-            try{
-            s2[i]=""+((Double.parseDouble(s2[temp-n1]))/(Double.parseDouble(s2[temp+n2])));
-            s2[temp-n1]="";s2[temp+n2]="";
-            }
-            catch(Exception e){}
-        }        
-    }
-    for(int i=0;i<s2.length;i++){
-        if(s2[i].equals("*")){
-            temp=i;
-            for(n1=1;;n1++){
-            if(!"".equals(s2[temp-n1]))break;
-            }
-            for(n2=1;;n2++){
-           try{
-            if(!"".equals(s2[temp+n2]))break;
-            }
-            catch(Exception e){break;} }
-            try{
-            s2[i]=""+((Double.parseDouble(s2[temp-n1]))*(Double.parseDouble(s2[temp+n2])));
-            s2[temp-n1]="";s2[temp+n2]="";
-            }
-            catch(Exception e){}
-        }        
-    }
-    for(int i=0;i<s2.length;i++){
-        if(s2[i].equals("-")){
-            temp=i;
-            for(n1=1;;n1++){
-            if(!"".equals(s2[temp-n1]))break;
-            }
-            for(n2=1;;n2++){
-            try{
-            if(!"".equals(s2[temp+n2]))break;
-            }
-            catch(Exception e){break;}}
-            try{
-            s2[i]=""+((Double.parseDouble(s2[temp-n1]))-(Double.parseDouble(s2[temp+n2])));
-            s2[temp-n1]="";s2[temp+n2]="";
-            }
-            catch(Exception e){}
-        }        
-    }
-    for(int i=0;i<s2.length;i++){
-        if(s2[i].equals("+")){
-            temp=i;
-            for(n1=1;;n1++){
-            if(!"".equals(s2[temp-n1]))break;
-            }
-            for(n2=1;;n2++){
-            try{
-            if(!"".equals(s2[temp+n2]))break;
-            }
-            catch(Exception e){break;}}
-            try{
-            s2[i]=""+((Double.parseDouble(s2[temp-n1]))+(Double.parseDouble(s2[temp+n2])));
-            s2[temp-n1]="";s2[temp+n2]="";
-            }
-            catch(Exception e){}
-        }        
-    }
-    for (String s11 : s2) {
-        if (!"".equals(s11)) {
-            return Double.parseDouble(s11);
-        }
-    }
-    return 0.0;
-}
+String calExp="";
+double e=Math.E;
 
     /**
      * Creates new form home
@@ -106,7 +22,6 @@ double calculate(String exp){
     public home() {
         initComponents();
      myinitComponents();
-     Arrays.fill(s1, "");
            }
 
     /**
@@ -118,7 +33,6 @@ double calculate(String exp){
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jToggleButton1 = new javax.swing.JToggleButton();
         bHistory = new javax.swing.JButton();
         fExp = new javax.swing.JTextField();
         fAns = new javax.swing.JTextField();
@@ -139,24 +53,34 @@ double calculate(String exp){
         bMultiply = new javax.swing.JButton();
         bMinus = new javax.swing.JButton();
         bPlus = new javax.swing.JButton();
+        bSin = new javax.swing.JButton();
+        bLn = new javax.swing.JButton();
+        bPie = new javax.swing.JButton();
+        bBraceLeft = new javax.swing.JButton();
+        bCos = new javax.swing.JButton();
+        bLog = new javax.swing.JButton();
+        bE = new javax.swing.JButton();
+        bBraceRight = new javax.swing.JButton();
+        bTan = new javax.swing.JButton();
+        bFact = new javax.swing.JButton();
+        bPow = new javax.swing.JButton();
+        bSqrt = new javax.swing.JButton();
+        bInv = new javax.swing.JToggleButton();
+        bCent = new javax.swing.JButton();
+        jButton14 = new javax.swing.JButton();
+        bAsin = new javax.swing.JButton();
+        bAcos = new javax.swing.JButton();
+        bAtan = new javax.swing.JButton();
+        bExp = new javax.swing.JButton();
+        bBtn = new javax.swing.JButton();
+        bSqp = new javax.swing.JButton();
+        bClr = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Calculator");
         setResizable(false);
-        setSize(new java.awt.Dimension(450, 580));
+        setSize(new java.awt.Dimension(490, 580));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jToggleButton1.setBackground(java.awt.Color.white);
-        jToggleButton1.setFont(new java.awt.Font("Ubuntu", 0, 22)); // NOI18N
-        jToggleButton1.setText("Deg");
-        jToggleButton1.setAlignmentY(0.0F);
-        jToggleButton1.setOpaque(true);
-        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton1ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jToggleButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 100, 40));
 
         bHistory.setBackground(java.awt.Color.white);
         bHistory.setFont(new java.awt.Font("Ubuntu", 0, 22)); // NOI18N
@@ -362,177 +286,725 @@ double calculate(String exp){
         });
         getContentPane().add(bPlus, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 500, 80, 80));
 
+        bSin.setBackground(java.awt.Color.blue);
+        bSin.setFont(new java.awt.Font("Ubuntu", 0, 25)); // NOI18N
+        bSin.setForeground(java.awt.Color.white);
+        bSin.setText("sin");
+        bSin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bSinActionPerformed(evt);
+            }
+        });
+        getContentPane().add(bSin, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 260, 80, 80));
+
+        bLn.setBackground(java.awt.Color.blue);
+        bLn.setFont(new java.awt.Font("Ubuntu", 0, 25)); // NOI18N
+        bLn.setForeground(java.awt.Color.white);
+        bLn.setText("ln");
+        bLn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bLnActionPerformed(evt);
+            }
+        });
+        getContentPane().add(bLn, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 340, 80, 80));
+
+        bPie.setBackground(java.awt.Color.blue);
+        bPie.setFont(new java.awt.Font("Ubuntu", 0, 25)); // NOI18N
+        bPie.setForeground(java.awt.Color.white);
+        bPie.setText("π");
+        bPie.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bPieActionPerformed(evt);
+            }
+        });
+        getContentPane().add(bPie, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 420, 80, 80));
+
+        bBraceLeft.setBackground(java.awt.Color.blue);
+        bBraceLeft.setFont(new java.awt.Font("Ubuntu", 0, 25)); // NOI18N
+        bBraceLeft.setForeground(java.awt.Color.white);
+        bBraceLeft.setText("(");
+        bBraceLeft.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bBraceLeftActionPerformed(evt);
+            }
+        });
+        getContentPane().add(bBraceLeft, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 500, 80, 80));
+
+        bCos.setBackground(java.awt.Color.blue);
+        bCos.setFont(new java.awt.Font("Ubuntu", 0, 25)); // NOI18N
+        bCos.setForeground(java.awt.Color.white);
+        bCos.setText("cos");
+        bCos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bCosActionPerformed(evt);
+            }
+        });
+        getContentPane().add(bCos, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 260, 80, 80));
+
+        bLog.setBackground(java.awt.Color.blue);
+        bLog.setFont(new java.awt.Font("Ubuntu", 0, 25)); // NOI18N
+        bLog.setForeground(java.awt.Color.white);
+        bLog.setText("log");
+        bLog.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bLogActionPerformed(evt);
+            }
+        });
+        getContentPane().add(bLog, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 340, 80, 80));
+
+        bE.setBackground(java.awt.Color.blue);
+        bE.setFont(new java.awt.Font("Ubuntu", 0, 25)); // NOI18N
+        bE.setForeground(java.awt.Color.white);
+        bE.setText("e");
+        bE.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bEActionPerformed(evt);
+            }
+        });
+        getContentPane().add(bE, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 420, 80, 80));
+
+        bBraceRight.setBackground(java.awt.Color.blue);
+        bBraceRight.setFont(new java.awt.Font("Ubuntu", 0, 25)); // NOI18N
+        bBraceRight.setForeground(java.awt.Color.white);
+        bBraceRight.setText(")");
+        bBraceRight.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bBraceRightActionPerformed(evt);
+            }
+        });
+        getContentPane().add(bBraceRight, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 500, 80, 80));
+
+        bTan.setBackground(java.awt.Color.blue);
+        bTan.setFont(new java.awt.Font("Ubuntu", 0, 25)); // NOI18N
+        bTan.setForeground(java.awt.Color.white);
+        bTan.setText("tan");
+        bTan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bTanActionPerformed(evt);
+            }
+        });
+        getContentPane().add(bTan, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 260, 80, 80));
+
+        bFact.setBackground(java.awt.Color.blue);
+        bFact.setFont(new java.awt.Font("Ubuntu", 0, 25)); // NOI18N
+        bFact.setForeground(java.awt.Color.white);
+        bFact.setText("!");
+        bFact.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bFactActionPerformed(evt);
+            }
+        });
+        getContentPane().add(bFact, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 340, 80, 80));
+
+        bPow.setBackground(java.awt.Color.blue);
+        bPow.setFont(new java.awt.Font("Ubuntu", 0, 25)); // NOI18N
+        bPow.setForeground(java.awt.Color.white);
+        bPow.setText("^");
+        bPow.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bPowActionPerformed(evt);
+            }
+        });
+        getContentPane().add(bPow, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 420, 80, 80));
+
+        bSqrt.setBackground(java.awt.Color.blue);
+        bSqrt.setFont(new java.awt.Font("Ubuntu", 0, 25)); // NOI18N
+        bSqrt.setForeground(java.awt.Color.white);
+        bSqrt.setText("√ ");
+        bSqrt.setToolTipText("");
+        bSqrt.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        bSqrt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bSqrtActionPerformed(evt);
+            }
+        });
+        getContentPane().add(bSqrt, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 500, 80, 80));
+
+        bInv.setBackground(java.awt.Color.blue);
+        bInv.setFont(new java.awt.Font("Ubuntu", 0, 25)); // NOI18N
+        bInv.setForeground(new java.awt.Color(255, 255, 255));
+        bInv.setText("INV");
+        bInv.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bInvActionPerformed(evt);
+            }
+        });
+        getContentPane().add(bInv, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 180, 80, 80));
+
+        bCent.setBackground(java.awt.Color.blue);
+        bCent.setFont(new java.awt.Font("Ubuntu", 0, 25)); // NOI18N
+        bCent.setForeground(new java.awt.Color(255, 255, 255));
+        bCent.setText("%");
+        bCent.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bCentActionPerformed(evt);
+            }
+        });
+        getContentPane().add(bCent, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 180, 80, 80));
+
+        jButton14.setBackground(java.awt.Color.blue);
+        jButton14.setFont(new java.awt.Font("Ubuntu", 0, 25)); // NOI18N
+        jButton14.setForeground(new java.awt.Color(255, 255, 255));
+        jButton14.setText("DEG");
+        getContentPane().add(jButton14, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 180, 80, 80));
+
+        bAsin.setBackground(new java.awt.Color(0, 0, 255));
+        bAsin.setFont(new java.awt.Font("Ubuntu", 0, 25)); // NOI18N
+        bAsin.setForeground(new java.awt.Color(255, 255, 255));
+        bAsin.setText("asin");
+        bAsin.setToolTipText("");
+        bAsin.setEnabled(false);
+        bAsin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bAsinActionPerformed(evt);
+            }
+        });
+        getContentPane().add(bAsin, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 260, 80, 80));
+
+        bAcos.setBackground(new java.awt.Color(0, 0, 255));
+        bAcos.setFont(new java.awt.Font("Ubuntu", 0, 25)); // NOI18N
+        bAcos.setForeground(new java.awt.Color(255, 255, 255));
+        bAcos.setText("acos");
+        bAcos.setEnabled(false);
+        bAcos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bAcosActionPerformed(evt);
+            }
+        });
+        getContentPane().add(bAcos, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 260, 80, 80));
+
+        bAtan.setBackground(new java.awt.Color(0, 0, 255));
+        bAtan.setFont(new java.awt.Font("Ubuntu", 0, 25)); // NOI18N
+        bAtan.setForeground(new java.awt.Color(255, 255, 255));
+        bAtan.setText("atan");
+        bAtan.setEnabled(false);
+        bAtan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bAtanActionPerformed(evt);
+            }
+        });
+        getContentPane().add(bAtan, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 260, 80, 80));
+
+        bExp.setBackground(new java.awt.Color(0, 0, 255));
+        bExp.setFont(new java.awt.Font("Ubuntu", 0, 25)); // NOI18N
+        bExp.setForeground(new java.awt.Color(255, 255, 255));
+        bExp.setText("exp");
+        bExp.setEnabled(false);
+        bExp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bExpActionPerformed(evt);
+            }
+        });
+        getContentPane().add(bExp, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 340, 80, 80));
+
+        bBtn.setBackground(new java.awt.Color(0, 0, 255));
+        bBtn.setFont(new java.awt.Font("Ubuntu", 0, 25)); // NOI18N
+        bBtn.setForeground(new java.awt.Color(255, 255, 255));
+        bBtn.setText("10^");
+        bBtn.setEnabled(false);
+        bBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bBtnActionPerformed(evt);
+            }
+        });
+        getContentPane().add(bBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 340, 80, 80));
+
+        bSqp.setBackground(new java.awt.Color(0, 0, 255));
+        bSqp.setFont(new java.awt.Font("Ubuntu", 0, 25)); // NOI18N
+        bSqp.setForeground(new java.awt.Color(255, 255, 255));
+        bSqp.setText("x^2");
+        bSqp.setEnabled(false);
+        bSqp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bSqpActionPerformed(evt);
+            }
+        });
+        getContentPane().add(bSqp, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 500, 80, 80));
+
+        bClr.setBackground(java.awt.Color.darkGray);
+        bClr.setFont(new java.awt.Font("Ubuntu", 0, 25)); // NOI18N
+        bClr.setForeground(new java.awt.Color(255, 255, 255));
+        bClr.setText("CLR");
+        bClr.setEnabled(false);
+        bClr.setHideActionText(true);
+        bClr.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bClrActionPerformed(evt);
+            }
+        });
+        getContentPane().add(bClr, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 180, 80, 80));
+
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 private void myinitComponents(){
 fExp.setHorizontalAlignment(SwingConstants.RIGHT);
 fAns.setHorizontalAlignment(SwingConstants.RIGHT);
+bSin.setVisible(true);bSin.setEnabled(true);
+        bCos.setVisible(true);bCos.setEnabled(true);
+        bTan.setVisible(true);bTan.setEnabled(true);
+        bLn.setVisible(true);bLn.setEnabled(true);
+        bLog.setVisible(true);bLog.setEnabled(true);
+        bSqrt.setVisible(true);bSin.setEnabled(true);
+        bAsin.setVisible(false);bAsin.setEnabled(false);
+        bAcos.setVisible(false);bAcos.setEnabled(false);
+        bAtan.setVisible(false);bAtan.setEnabled(false);
+        bExp.setVisible(false);bExp.setEnabled(false);
+        bSqp.setVisible(false);bSqp.setEnabled(false);
+        bBtn.setVisible(false);bBtn.setEnabled(false);
+        bClr.setVisible(false);bClr.setEnabled(false);
+        
 }
     private void b5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b5ActionPerformed
-       s1[index]+="5";
+        bClr.setVisible(false);bClr.setEnabled(false);
+        bDel.setVisible(true);bDel.setEnabled(true);
+        calExp+="5";
         newExp+="5";
         fExp.setText(newExp); 
-        fAns.setText(""+calculate(newExp));// TODO add your handling code here:
+        prac.nl=0;prac.nr=0;
+        fAns.setText(""+prac.calculate(calExp));// TODO add your handling code here:
     }//GEN-LAST:event_b5ActionPerformed
 
     private void b6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b6ActionPerformed
-     s1[index]+="6";
+        bClr.setVisible(false);bClr.setEnabled(false);
+        bDel.setVisible(true);bDel.setEnabled(true);
+        calExp+="6";
         newExp+="6";
-        fExp.setText(newExp); 
-        fAns.setText(""+calculate(newExp));// TODO add your handling code here:
+        fExp.setText(newExp);
+        prac.nl=0;prac.nr=0;
+        fAns.setText(""+prac.calculate(calExp));// TODO add your handling code here:
     }//GEN-LAST:event_b6ActionPerformed
 
     private void b1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b1ActionPerformed
-        s1[index]+="1";
+        bClr.setVisible(false);bClr.setEnabled(false);
+        bDel.setVisible(true);bDel.setEnabled(true);
+        calExp+="1";
         newExp+="1";
-        fExp.setText(newExp); 
-        fAns.setText(""+calculate(newExp));// TODO add your handling code here:
+        fExp.setText(newExp);
+        prac.nl=0;prac.nr=0;
+      fAns.setText(""+prac.calculate(calExp));
     }//GEN-LAST:event_b1ActionPerformed
 
     private void b0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b0ActionPerformed
-        s1[index]+="0";
+        bClr.setVisible(false);bClr.setEnabled(false);
+        bDel.setVisible(true);bDel.setEnabled(true);
+        calExp+="0";
         newExp+="0";
-        fExp.setText(newExp);   
-        fAns.setText(""+calculate(newExp));// TODO add your handling code here:
+        fExp.setText(newExp);
+        prac.nl=0;prac.nr=0;
+        fAns.setText(""+prac.calculate(calExp));// TODO add your handling code here:
     }//GEN-LAST:event_b0ActionPerformed
 
     private void b9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b9ActionPerformed
-        s1[index]+="9";
+        bClr.setVisible(false);bClr.setEnabled(false);
+        bDel.setVisible(true);bDel.setEnabled(true);
+        calExp+="9";
         newExp+="9";
-        fExp.setText(newExp);   
-        fAns.setText(""+calculate(newExp));// TODO add your handling code here:
+        fExp.setText(newExp);
+        prac.nl=0;prac.nr=0;
+        fAns.setText(""+prac.calculate(calExp));// TODO add your handling code here:
     }//GEN-LAST:event_b9ActionPerformed
 
     private void b4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b4ActionPerformed
-        s1[index]+="4";
+        bClr.setVisible(false);bClr.setEnabled(false);
+        bDel.setVisible(true);bDel.setEnabled(true);
+        calExp+="4";
         newExp+="4";
-        fExp.setText(newExp);   
-        fAns.setText(""+calculate(newExp));// TODO add your handling code here:
+        fExp.setText(newExp);
+        prac.nl=0;prac.nr=0;
+        fAns.setText(""+prac.calculate(calExp));// TODO add your handling code here:
     }//GEN-LAST:event_b4ActionPerformed
 
     private void b7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b7ActionPerformed
-        s1[index]+="7";
+        bClr.setVisible(false);bClr.setEnabled(false);
+        bDel.setVisible(true);bDel.setEnabled(true);
+        calExp+="7";
         newExp+="7";
         fExp.setText(newExp);
-        fAns.setText(""+calculate(newExp));// TODO add your handling code here:
+        prac.nl=0;prac.nr=0;
+        fAns.setText(""+prac.calculate(calExp));
     }//GEN-LAST:event_b7ActionPerformed
 
     private void b2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b2ActionPerformed
-        s1[index]+="2";
+        bClr.setVisible(false);bClr.setEnabled(false);
+        bDel.setVisible(true);bDel.setEnabled(true);
+        calExp+="2";
         newExp+="2";
-        fExp.setText(newExp);    
-        fAns.setText(""+calculate(newExp));// TODO add your handling code here:
+        fExp.setText(newExp);
+        prac.nl=0;prac.nr=0;
+        fAns.setText(""+prac.calculate(calExp));
     }//GEN-LAST:event_b2ActionPerformed
 
     private void b3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b3ActionPerformed
-        s1[index]+="3";
+        bClr.setVisible(false);bClr.setEnabled(false);
+        bDel.setVisible(true);bDel.setEnabled(true);
+        calExp+="3";
         newExp+="3";
-        fExp.setText(newExp);   
-        fAns.setText(""+calculate(newExp));// TODO add your handling code here:
+        fExp.setText(newExp);
+        prac.nl=0;prac.nr=0;
+        fAns.setText(""+prac.calculate(calExp));
     }//GEN-LAST:event_b3ActionPerformed
 
     private void b8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b8ActionPerformed
-        s1[index]+="8";
+        bClr.setVisible(false);bClr.setEnabled(false);
+        bDel.setVisible(true);bDel.setEnabled(true);
+        calExp+="8";
         newExp+="8";
-        fExp.setText(newExp);    
-        fAns.setText(""+calculate(newExp));// TODO add your handling code here:
+        fExp.setText(newExp);
+        prac.nl=0;prac.nr=0;
+        fAns.setText(""+prac.calculate(calExp));
     }//GEN-LAST:event_b8ActionPerformed
 
     private void bDotActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bDotActionPerformed
-        s1[index]+=".";
+        bClr.setVisible(false);bClr.setEnabled(false);
+        bDel.setVisible(true);bDel.setEnabled(true);
+        calExp+=".";
         newExp+=".";
-        fExp.setText(newExp);  
-        fAns.setText(""+calculate(newExp));// TODO add your handling code here:
+        fExp.setText(newExp);
+        prac.nl=0;prac.nr=0;
+        fAns.setText(""+prac.calculate(calExp));// TODO add your handling code here:
     }//GEN-LAST:event_bDotActionPerformed
 
     private void bDelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bDelActionPerformed
-       try{
-           s1[index]=s1[index].substring(0, s1[index].length()-1);
-    }
-       catch(Exception e){
-           if(index>0)
-           {index--;
-       s1[index]=s1[index].substring(0, s1[index].length()-1);}
-    }
-        try{
-    newExp=newExp.substring(0, newExp.length()-1);
-fExp.setText(newExp);}
-catch(Exception e){
-}
-fAns.setText(""+calculate(newExp));// TODO add your handling code here:
+       if(calExp.endsWith("ep")){calExp=calExp.substring(0, calExp.length()-2); newExp=newExp.substring(0, newExp.length()-1);}
+       else if(calExp.endsWith("pi")){calExp=calExp.substring(0, calExp.length()-2); newExp=newExp.substring(0, newExp.length()-1);}
+       else if(calExp.endsWith("etn")){calExp=calExp.substring(0, calExp.length()-3); newExp=newExp.substring(0, newExp.length()-3);}
+       else if(calExp.endsWith("exp")){calExp=calExp.substring(0, calExp.length()-3); newExp=newExp.substring(0, newExp.length()-3);}
+       else if(calExp.endsWith("atan")){calExp=calExp.substring(0, calExp.length()-4); newExp=newExp.substring(0, newExp.length()-4);}
+       else if(calExp.endsWith("acos")){calExp=calExp.substring(0, calExp.length()-4); newExp=newExp.substring(0, newExp.length()-4);}
+       else if(calExp.endsWith("asin")){calExp=calExp.substring(0, calExp.length()-4); newExp=newExp.substring(0, newExp.length()-4);}
+       else if(calExp.endsWith("sqp")){calExp=calExp.substring(0, calExp.length()-3); newExp=newExp.substring(0, newExp.length()-2);}
+       else if(calExp.endsWith("log")){calExp=calExp.substring(0, calExp.length()-3); newExp=newExp.substring(0, newExp.length()-3);}
+       else if(calExp.endsWith("ln")){calExp=calExp.substring(0, calExp.length()-2); newExp=newExp.substring(0, newExp.length()-2);}
+       else if(calExp.endsWith("tan")){calExp=calExp.substring(0, calExp.length()-3); newExp=newExp.substring(0, newExp.length()-3);}
+       else if(calExp.endsWith("cos")){calExp=calExp.substring(0, calExp.length()-3); newExp=newExp.substring(0, newExp.length()-3);}
+       else if(calExp.endsWith("sin")){calExp=calExp.substring(0, calExp.length()-3); newExp=newExp.substring(0, newExp.length()-3);}
+       else {calExp=calExp.substring(0, calExp.length()-1); newExp=newExp.substring(0, newExp.length()-1);}
+       fExp.setText(newExp);
+       prac.nl=0;prac.nr=0;
+       fAns.setText(""+prac.calculate(calExp));
     }//GEN-LAST:event_bDelActionPerformed
 
     private void bDivideActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bDivideActionPerformed
-      if(newExp.endsWith("+")||newExp.endsWith("-")||newExp.endsWith("×")||newExp.endsWith("÷")){
-       newExp=newExp.substring(0, newExp.length()-1)+"÷";
-      s1[--index]="/";
-       index++;}
+      bClr.setVisible(false);bClr.setEnabled(false);
+        bDel.setVisible(true);bDel.setEnabled(true);
+        if(newExp.endsWith("+")||newExp.endsWith("-")||newExp.endsWith("×")||newExp.endsWith("÷")||newExp.endsWith("^")){
+          newExp=newExp.substring(0, newExp.length()-1)+"÷";
+       calExp=calExp.substring(0, calExp.length()-1)+"/";         
+      }
        else
-      { newExp+="÷";
-       fExp.setText(newExp);  
-       index++;
-       s1[index]+="/";
-       index++;
+      { calExp+="/";
+        newExp+="÷";
       } 
-fExp.setText(newExp); // TODO add your handling code here:
+      fExp.setText(newExp); // TODO add your handling code here:
     }//GEN-LAST:event_bDivideActionPerformed
 
     private void bMultiplyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bMultiplyActionPerformed
-        if(newExp.endsWith("+")||newExp.endsWith("-")||newExp.endsWith("×")||newExp.endsWith("÷")){
-       newExp=newExp.substring(0, newExp.length()-1)+"×";
-         s1[--index]="*";
-       index++;
+       bClr.setVisible(false);bClr.setEnabled(false);
+        bDel.setVisible(true);bDel.setEnabled(true);
+        if(newExp.endsWith("+")||newExp.endsWith("-")||newExp.endsWith("×")||newExp.endsWith("÷")||newExp.endsWith("^")){
+       newExp=newExp.substring(0, newExp.length()-1)+"÷";
+       calExp=calExp.substring(0, calExp.length()-1)+"*";
         }
         else{
         newExp+="×";
-       fExp.setText(newExp);
-       index++;
-       s1[index]+="*";
-       index++;}
+       calExp+="*";
+        }
         fExp.setText(newExp);
         // TODO add your handling code here:
     }//GEN-LAST:event_bMultiplyActionPerformed
 
     private void bMinusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bMinusActionPerformed
-        if(newExp.endsWith("+")||newExp.endsWith("-")||newExp.endsWith("×")||newExp.endsWith("÷")){
+       bClr.setVisible(false);bClr.setEnabled(false);
+        bDel.setVisible(true);bDel.setEnabled(true);
+         if(newExp.endsWith("+")||newExp.endsWith("-")||newExp.endsWith("×")||newExp.endsWith("÷")||newExp.endsWith("^")){
        newExp=newExp.substring(0, newExp.length()-1)+"-";
-        s1[--index]="-";
-       index++;}
+       calExp=calExp.substring(0, calExp.length()-1)+"-";
+        }
         else{
+        calExp+="-";
         newExp+="-";
-       index++;
-       s1[index]+="-";
-       index++;
         }
         fExp.setText(newExp);
     }//GEN-LAST:event_bMinusActionPerformed
 
     private void bPlusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bPlusActionPerformed
-        if(newExp.endsWith("+")||newExp.endsWith("-")||newExp.endsWith("×")||newExp.endsWith("÷")){
+        bClr.setVisible(false);bClr.setEnabled(false);
+        bDel.setVisible(true);bDel.setEnabled(true);
+        if(newExp.endsWith("+")||newExp.endsWith("-")||newExp.endsWith("×")||newExp.endsWith("÷")||newExp.endsWith("^")){
        newExp=newExp.substring(0, newExp.length()-1)+"+";
-        s1[--index]="+";
-       index++;}
+       calExp=calExp.substring(0, calExp.length()-1)+"+";         
+        }
         else{
         newExp+="+";
-      
-       index++;
-       s1[index]+="+";
-       index++;}
-       fExp.setText(newExp);  
+       calExp+="+";}
+        fExp.setText(newExp);  
     }//GEN-LAST:event_bPlusActionPerformed
 
-    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleButton1ActionPerformed
-
     private void bHistoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bHistoryActionPerformed
-System.out.println(s1[0]+" "+s1[1]+" "+s1[2]+" "+s1[3]);        // TODO add your handling code here:
+System.out.println(calExp);        // TODO add your handling code here:
     }//GEN-LAST:event_bHistoryActionPerformed
 
     private void bEqualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bEqualActionPerformed
-        // TODO add your handling code here:
+      fExp.setText(fAns.getText());
+      fAns.setText("");
+      newExp=fExp.getText();
+      calExp=newExp;
+      bClr.setVisible(true);bClr.setEnabled(true);
+      bDel.setVisible(false);bDel.setEnabled(false);
+          
     }//GEN-LAST:event_bEqualActionPerformed
+
+    private void bEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bEActionPerformed
+        bClr.setVisible(false);bClr.setEnabled(false);
+        bDel.setVisible(true);bDel.setEnabled(true);
+        calExp+="ep";
+        newExp+="e";
+        fExp.setText(newExp);
+        prac.nl=0;prac.nr=0;
+        fAns.setText(""+prac.calculate(calExp));
+    }//GEN-LAST:event_bEActionPerformed
+
+    private void bPieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bPieActionPerformed
+        bClr.setVisible(false);bClr.setEnabled(false);
+        bDel.setVisible(true);bDel.setEnabled(true);
+        calExp+="pi";
+        newExp+="π";
+        fExp.setText(newExp);
+        prac.nl=0;prac.nr=0;
+        fAns.setText(""+prac.calculate(calExp));        
+    }//GEN-LAST:event_bPieActionPerformed
+
+    private void bPowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bPowActionPerformed
+        bClr.setVisible(false);bClr.setEnabled(false);
+        bDel.setVisible(true);bDel.setEnabled(true);
+        if(newExp.endsWith("+")||newExp.endsWith("-")||newExp.endsWith("×")||newExp.endsWith("÷")||newExp.endsWith("^")){
+       newExp=newExp.substring(0, newExp.length()-1)+"^";
+       calExp=calExp.substring(0, calExp.length()-1)+"^";         
+        }
+        else{
+        newExp+="^";
+        calExp+="^";
+        }
+       fExp.setText(newExp);  
+    }//GEN-LAST:event_bPowActionPerformed
+
+    private void bBraceLeftActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bBraceLeftActionPerformed
+        bClr.setVisible(false);bClr.setEnabled(false);
+        bDel.setVisible(true);bDel.setEnabled(true);
+        calExp+="(";
+        newExp+="(";
+        fExp.setText(newExp);
+        prac.nl=0;prac.nr=0;
+        fAns.setText(""+prac.calculate(calExp));
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bBraceLeftActionPerformed
+
+    private void bBraceRightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bBraceRightActionPerformed
+        bClr.setVisible(false);bClr.setEnabled(false);
+        bDel.setVisible(true);bDel.setEnabled(true);
+        calExp+=")";
+        newExp+=")";
+        fExp.setText(newExp);
+        prac.nl=0;prac.nr=0;
+        fAns.setText(""+prac.calculate(calExp));
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bBraceRightActionPerformed
+
+    private void bSinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bSinActionPerformed
+        bClr.setVisible(false);bClr.setEnabled(false);
+        bDel.setVisible(true);bDel.setEnabled(true);
+        calExp+="sin";
+        newExp+="sin";
+        fExp.setText(newExp);
+        prac.nl=0;prac.nr=0;
+        fAns.setText(""+prac.calculate(calExp));
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bSinActionPerformed
+
+    private void bCosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCosActionPerformed
+        bClr.setVisible(false);bClr.setEnabled(false);
+        bDel.setVisible(true);bDel.setEnabled(true);
+        calExp+="cos";
+        newExp+="cos";
+        fExp.setText(newExp);
+        prac.nl=0;prac.nr=0;
+        fAns.setText(""+prac.calculate(calExp));
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bCosActionPerformed
+
+    private void bTanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bTanActionPerformed
+        bClr.setVisible(false);bClr.setEnabled(false);
+        bDel.setVisible(true);bDel.setEnabled(true);
+        calExp+="tan";
+        newExp+="tan";
+        fExp.setText(newExp);
+        prac.nl=0;prac.nr=0;
+        fAns.setText(""+prac.calculate(calExp));
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bTanActionPerformed
+
+    private void bLnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bLnActionPerformed
+        bClr.setVisible(false);bClr.setEnabled(false);
+        bDel.setVisible(true);bDel.setEnabled(true);
+        calExp+="ln";
+        newExp+="ln";
+        fExp.setText(newExp);
+        prac.nl=0;prac.nr=0;
+        fAns.setText(""+prac.calculate(calExp));
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bLnActionPerformed
+
+    private void bLogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bLogActionPerformed
+        bClr.setVisible(false);bClr.setEnabled(false);
+        bDel.setVisible(true);bDel.setEnabled(true);
+        calExp+="log";
+        newExp+="log";
+        fExp.setText(newExp);
+        prac.nl=0;prac.nr=0;
+        fAns.setText(""+prac.calculate(calExp));
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bLogActionPerformed
+
+    private void bSqrtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bSqrtActionPerformed
+        bClr.setVisible(false);bClr.setEnabled(false);
+        bDel.setVisible(true);bDel.setEnabled(true);
+        calExp+="sqrt";
+        newExp+="√";
+        fExp.setText(newExp);
+        prac.nl=0;prac.nr=0;
+        fAns.setText(""+prac.calculate(calExp));
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bSqrtActionPerformed
+
+    private void bInvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bInvActionPerformed
+        if(bInv.isSelected()){
+        bSin.setVisible(false);bSin.setEnabled(false);
+        bCos.setVisible(false);bCos.setEnabled(false);
+        bTan.setVisible(false);bTan.setEnabled(false);
+        bLn.setVisible(false);bLn.setEnabled(false);
+        bLog.setVisible(false);bLog.setEnabled(false);
+        bSqrt.setVisible(false);bSin.setEnabled(false);
+        bAsin.setVisible(true);bAsin.setEnabled(true);
+        bAcos.setVisible(true);bAcos.setEnabled(true);
+        bAtan.setVisible(true);bAtan.setEnabled(true);
+        bExp.setVisible(true);bExp.setEnabled(true);
+        bSqp.setVisible(true);bSqp.setEnabled(true);
+        bBtn.setVisible(true);bBtn.setEnabled(true);
+        }
+        else{
+        bSin.setVisible(true);bSin.setEnabled(true);
+        bCos.setVisible(true);bCos.setEnabled(true);
+        bTan.setVisible(true);bTan.setEnabled(true);
+        bLn.setVisible(true);bLn.setEnabled(true);
+        bLog.setVisible(true);bLog.setEnabled(true);
+        bSqrt.setVisible(true);bSin.setEnabled(true);
+        bAsin.setVisible(false);bAsin.setEnabled(false);
+        bAcos.setVisible(false);bAcos.setEnabled(false);
+        bAtan.setVisible(false);bAtan.setEnabled(false);
+        bExp.setVisible(false);bExp.setEnabled(false);
+        bSqp.setVisible(false);bSqp.setEnabled(false);
+        bBtn.setVisible(false);bBtn.setEnabled(false);
+        }
+    }//GEN-LAST:event_bInvActionPerformed
+
+    private void bAsinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAsinActionPerformed
+        bClr.setVisible(false);bClr.setEnabled(false);
+        bDel.setVisible(true);bDel.setEnabled(true);
+        calExp+="asin";
+        newExp+="asin";
+        fExp.setText(newExp);
+        prac.nl=0;prac.nr=0;
+        fAns.setText(""+prac.calculate(calExp));
+        
+    }//GEN-LAST:event_bAsinActionPerformed
+
+    private void bAcosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAcosActionPerformed
+        bClr.setVisible(false);bClr.setEnabled(false);
+        bDel.setVisible(true);bDel.setEnabled(true);
+        calExp+="acos";
+        newExp+="acos";
+        fExp.setText(newExp);
+        prac.nl=0;prac.nr=0;
+        fAns.setText(""+prac.calculate(calExp));
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bAcosActionPerformed
+
+    private void bAtanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAtanActionPerformed
+        bClr.setVisible(false);bClr.setEnabled(false);
+        bDel.setVisible(true);bDel.setEnabled(true);
+        calExp+="atan";
+        newExp+="atan";
+        fExp.setText(newExp);
+        prac.nl=0;prac.nr=0;
+        fAns.setText(""+prac.calculate(calExp));
+        
+    }//GEN-LAST:event_bAtanActionPerformed
+
+    private void bExpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bExpActionPerformed
+        bClr.setVisible(false);bClr.setEnabled(false);
+        bDel.setVisible(true);bDel.setEnabled(true);
+        calExp+="exp";
+        newExp+="exp";
+        fExp.setText(newExp);
+        prac.nl=0;prac.nr=0;
+        fAns.setText(""+prac.calculate(calExp));
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bExpActionPerformed
+
+    private void bBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bBtnActionPerformed
+        bClr.setVisible(false);bClr.setEnabled(false);
+        bDel.setVisible(true);bDel.setEnabled(true);
+        calExp+="etn";
+        newExp+="10^";
+        fExp.setText(newExp);
+        prac.nl=0;prac.nr=0;
+        fAns.setText(""+prac.calculate(calExp));
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bBtnActionPerformed
+
+    private void bSqpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bSqpActionPerformed
+        bClr.setVisible(false);bClr.setEnabled(false);
+        bDel.setVisible(true);bDel.setEnabled(true);
+        calExp+="sqp";
+        newExp+="sq";
+        fExp.setText(newExp);
+        prac.nl=0;prac.nr=0;
+        fAns.setText(""+prac.calculate(calExp));
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bSqpActionPerformed
+
+    private void bFactActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bFactActionPerformed
+        bClr.setVisible(false);bClr.setEnabled(false);
+        bDel.setVisible(true);bDel.setEnabled(true);
+        calExp+="!";
+        newExp+="!";
+        fExp.setText(newExp);
+        prac.nl=0;prac.nr=0;
+        fAns.setText(""+prac.calculate(calExp));
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bFactActionPerformed
+
+    private void bCentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCentActionPerformed
+        bClr.setVisible(false);bClr.setEnabled(false);
+        bDel.setVisible(true);bDel.setEnabled(true);
+        calExp+="%";
+        newExp+="%";
+        fExp.setText(newExp);
+        prac.nl=0;prac.nr=0;
+        fAns.setText(""+prac.calculate(calExp));
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bCentActionPerformed
+
+    private void bClrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bClrActionPerformed
+        bClr.setVisible(false);bClr.setEnabled(false);
+        bDel.setVisible(true);bDel.setEnabled(true);
+        fExp.setText("");
+        fAns.setText("");
+        newExp="";
+        calExp="";
+         // TODO add your handling code here:
+    }//GEN-LAST:event_bClrActionPerformed
 
     /**
      * @param args the command line arguments
@@ -580,16 +1052,37 @@ System.out.println(s1[0]+" "+s1[1]+" "+s1[2]+" "+s1[3]);        // TODO add your
     private javax.swing.JButton b7;
     private javax.swing.JButton b8;
     private javax.swing.JButton b9;
+    private javax.swing.JButton bAcos;
+    private javax.swing.JButton bAsin;
+    private javax.swing.JButton bAtan;
+    private javax.swing.JButton bBraceLeft;
+    private javax.swing.JButton bBraceRight;
+    private javax.swing.JButton bBtn;
+    private javax.swing.JButton bCent;
+    private javax.swing.JButton bClr;
+    private javax.swing.JButton bCos;
     private javax.swing.JButton bDel;
     private javax.swing.JButton bDivide;
     private javax.swing.JButton bDot;
+    private javax.swing.JButton bE;
     private javax.swing.JButton bEqual;
+    private javax.swing.JButton bExp;
+    private javax.swing.JButton bFact;
     private javax.swing.JButton bHistory;
+    private javax.swing.JToggleButton bInv;
+    private javax.swing.JButton bLn;
+    private javax.swing.JButton bLog;
     private javax.swing.JButton bMinus;
     private javax.swing.JButton bMultiply;
+    private javax.swing.JButton bPie;
     private javax.swing.JButton bPlus;
+    private javax.swing.JButton bPow;
+    private javax.swing.JButton bSin;
+    private javax.swing.JButton bSqp;
+    private javax.swing.JButton bSqrt;
+    private javax.swing.JButton bTan;
     private javax.swing.JTextField fAns;
     private javax.swing.JTextField fExp;
-    private javax.swing.JToggleButton jToggleButton1;
+    private javax.swing.JButton jButton14;
     // End of variables declaration//GEN-END:variables
 }
