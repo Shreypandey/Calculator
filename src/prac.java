@@ -83,20 +83,20 @@ public class prac  {
         static double parse(String s){
 		double ans=0.0;
 		s=s.replace("m","-");
-		if(s.startsWith("sin")){ans=Math.sin(Double.parseDouble(s.substring(3)));}
-		else if(s.endsWith("!")){ans=prac.gamma(Double.parseDouble(s.substring(0,s.length()-1))+1);}
- 		else if(s.endsWith("%")){ans=Double.parseDouble(s.substring(0,s.length()-1))*0.01;}
- 		else if(s.startsWith("cos")){ans=Math.cos(Double.parseDouble(s.substring(3)));}
-		else if(s.startsWith("tan")){ans=Math.cos(Double.parseDouble(s.substring(3)));}
-		else if(s.startsWith("ln")){ans=Math.log(Double.parseDouble(s.substring(2)));}
-		else if(s.startsWith("log")){ans=Math.log10(Double.parseDouble(s.substring(3)));}
- 		else if(s.startsWith("sqrt")){ans=Math.sqrt(Double.parseDouble(s.substring(4)));}
- 		else if(s.startsWith("sqp")){ans=Math.pow(Double.parseDouble(s.substring(3)),2);}
- 		else if(s.startsWith("asin")){ans=Math.asin(Double.parseDouble(s.substring(4)));}
- 		else if(s.startsWith("acos")){ans=Math.acos(Double.parseDouble(s.substring(4)));}
- 		else if(s.startsWith("atan")){ans=Math.atan(Double.parseDouble(s.substring(4)));}
- 		else if(s.startsWith("exp")){ans=Math.exp(Double.parseDouble(s.substring(3)));}
- 		else if(s.startsWith("etn")){ans=Math.pow(10,Double.parseDouble(s.substring(3)));}
+		if(s.startsWith("sin")){if(home.degree==false)ans=Math.sin(prac.parse(s.substring(3)));else ans=Math.sin(Math.toRadians(prac.parse(s.substring(3))));}
+		else if(s.endsWith("!")){ans=prac.gamma(prac.parse(s.substring(0,s.length()-1))+1);}
+ 		else if(s.endsWith("%")){ans=prac.parse(s.substring(0,s.length()-1))*0.01;}
+ 		else if(s.startsWith("cos")){if(home.degree==false)ans=Math.cos(prac.parse(s.substring(3)));else ans=Math.cos(Math.toRadians(prac.parse(s.substring(3))));}
+		else if(s.startsWith("tan")){if(home.degree==false)ans=Math.tan(prac.parse(s.substring(3)));else ans=Math.tan(Math.toRadians(prac.parse(s.substring(3))));}
+		else if(s.startsWith("ln")){ans=Math.log(prac.parse(s.substring(2)));}
+		else if(s.startsWith("log")){ans=Math.log10(prac.parse(s.substring(3)));}
+ 		else if(s.startsWith("sqrt")){ans=Math.sqrt(prac.parse(s.substring(4)));}
+ 		else if(s.startsWith("sqp")){ans=Math.pow(prac.parse(s.substring(3)),2);}
+ 		else if(s.startsWith("asin")){if(home.degree==false)ans=Math.asin(prac.parse(s.substring(4)));else ans=Math.toDegrees(Math.asin(prac.parse(s.substring(4))));}
+ 		else if(s.startsWith("acos")){if(home.degree==false)ans=Math.acos(prac.parse(s.substring(4)));else ans=Math.toDegrees(Math.acos(prac.parse(s.substring(4))));}
+ 		else if(s.startsWith("atan")){if(home.degree==false)ans=Math.atan(prac.parse(s.substring(4)));else ans=Math.toDegrees(Math.atan(prac.parse(s.substring(4))));}
+ 		else if(s.startsWith("exp")){ans=Math.exp(prac.parse(s.substring(3)));}
+ 		else if(s.startsWith("etn")){ans=Math.pow(10,prac.parse(s.substring(3)));}
  		else if(s.startsWith("ep")){ans=Math.E;}
                 else if(s.startsWith("pi")){ans=Math.PI;}
                 else ans=Double.parseDouble(s);

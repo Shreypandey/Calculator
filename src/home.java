@@ -1,4 +1,7 @@
 
+import java.io.*;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import javax.swing.SwingConstants;
 
 /*
@@ -15,7 +18,7 @@ public class home extends javax.swing.JFrame {
 String newExp="";
 String calExp="";
 double e=Math.E;
-
+static boolean degree=false;
     /**
      * Creates new form home
      */
@@ -67,7 +70,7 @@ double e=Math.E;
         bSqrt = new javax.swing.JButton();
         bInv = new javax.swing.JToggleButton();
         bCent = new javax.swing.JButton();
-        jButton14 = new javax.swing.JButton();
+        bDeg = new javax.swing.JButton();
         bAsin = new javax.swing.JButton();
         bAcos = new javax.swing.JButton();
         bAtan = new javax.swing.JButton();
@@ -75,6 +78,7 @@ double e=Math.E;
         bBtn = new javax.swing.JButton();
         bSqp = new javax.swing.JButton();
         bClr = new javax.swing.JButton();
+        bRad = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Calculator");
@@ -90,14 +94,14 @@ double e=Math.E;
                 bHistoryActionPerformed(evt);
             }
         });
-        getContentPane().add(bHistory, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 0, 100, 40));
+        getContentPane().add(bHistory, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 0, 100, 40));
 
         fExp.setFont(new java.awt.Font("Ubuntu", 0, 36)); // NOI18N
-        getContentPane().add(fExp, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 450, 80));
+        getContentPane().add(fExp, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 690, 80));
 
         fAns.setEditable(false);
         fAns.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
-        getContentPane().add(fAns, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 450, 60));
+        getContentPane().add(fAns, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 690, 60));
 
         b7.setBackground(java.awt.Color.black);
         b7.setFont(new java.awt.Font("Ubuntu", 0, 25)); // NOI18N
@@ -442,11 +446,16 @@ double e=Math.E;
         });
         getContentPane().add(bCent, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 180, 80, 80));
 
-        jButton14.setBackground(java.awt.Color.blue);
-        jButton14.setFont(new java.awt.Font("Ubuntu", 0, 25)); // NOI18N
-        jButton14.setForeground(new java.awt.Color(255, 255, 255));
-        jButton14.setText("DEG");
-        getContentPane().add(jButton14, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 180, 80, 80));
+        bDeg.setBackground(java.awt.Color.blue);
+        bDeg.setFont(new java.awt.Font("Ubuntu", 0, 25)); // NOI18N
+        bDeg.setForeground(new java.awt.Color(255, 255, 255));
+        bDeg.setText("DEG");
+        bDeg.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bDegActionPerformed(evt);
+            }
+        });
+        getContentPane().add(bDeg, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 180, 80, 80));
 
         bAsin.setBackground(new java.awt.Color(0, 0, 255));
         bAsin.setFont(new java.awt.Font("Ubuntu", 0, 25)); // NOI18N
@@ -534,6 +543,18 @@ double e=Math.E;
         });
         getContentPane().add(bClr, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 180, 80, 80));
 
+        bRad.setBackground(new java.awt.Color(0, 0, 255));
+        bRad.setFont(new java.awt.Font("Ubuntu", 0, 25)); // NOI18N
+        bRad.setForeground(new java.awt.Color(255, 255, 255));
+        bRad.setText("RAD");
+        bRad.setEnabled(false);
+        bRad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bRadActionPerformed(evt);
+            }
+        });
+        getContentPane().add(bRad, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 180, 80, 80));
+
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
@@ -553,6 +574,7 @@ bSin.setVisible(true);bSin.setEnabled(true);
         bSqp.setVisible(false);bSqp.setEnabled(false);
         bBtn.setVisible(false);bBtn.setEnabled(false);
         bClr.setVisible(false);bClr.setEnabled(false);
+        bRad.setVisible(false);bRad.setEnabled(false);
         
 }
     private void b5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b5ActionPerformed
@@ -742,10 +764,21 @@ bSin.setVisible(true);bSin.setEnabled(true);
     }//GEN-LAST:event_bPlusActionPerformed
 
     private void bHistoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bHistoryActionPerformed
-System.out.println(calExp);        // TODO add your handling code here:
+new history().setVisible(true);
     }//GEN-LAST:event_bHistoryActionPerformed
 
     private void bEqualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bEqualActionPerformed
+      Date d=new Date();
+      SimpleDateFormat sdf=new SimpleDateFormat("dd:MM:yyyy");
+        try(FileWriter fw = new FileWriter("history.txt", true);
+    BufferedWriter bw = new BufferedWriter(fw);
+    PrintWriter out = new PrintWriter(bw))
+{
+    out.println(sdf.format(d));
+    out.println(newExp+"=");
+    out.println(fAns.getText()+"\n ");
+} catch (IOException e) {
+}
       fExp.setText(fAns.getText());
       fAns.setText("");
       newExp=fExp.getText();
@@ -1006,6 +1039,22 @@ System.out.println(calExp);        // TODO add your handling code here:
          // TODO add your handling code here:
     }//GEN-LAST:event_bClrActionPerformed
 
+    private void bDegActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bDegActionPerformed
+        bDeg.setVisible(false);bDeg.setEnabled(false);
+        bRad.setVisible(true);bRad.setEnabled(true);
+        degree=true;
+        fAns.setText(""+prac.calculate(calExp));
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bDegActionPerformed
+
+    private void bRadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bRadActionPerformed
+        bDeg.setVisible(true);bDeg.setEnabled(true);
+        bRad.setVisible(false);bRad.setEnabled(false);
+        degree=false;
+        fAns.setText(""+prac.calculate(calExp));
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bRadActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1061,6 +1110,7 @@ System.out.println(calExp);        // TODO add your handling code here:
     private javax.swing.JButton bCent;
     private javax.swing.JButton bClr;
     private javax.swing.JButton bCos;
+    private javax.swing.JButton bDeg;
     private javax.swing.JButton bDel;
     private javax.swing.JButton bDivide;
     private javax.swing.JButton bDot;
@@ -1077,12 +1127,12 @@ System.out.println(calExp);        // TODO add your handling code here:
     private javax.swing.JButton bPie;
     private javax.swing.JButton bPlus;
     private javax.swing.JButton bPow;
+    private javax.swing.JButton bRad;
     private javax.swing.JButton bSin;
     private javax.swing.JButton bSqp;
     private javax.swing.JButton bSqrt;
     private javax.swing.JButton bTan;
     private javax.swing.JTextField fAns;
     private javax.swing.JTextField fExp;
-    private javax.swing.JButton jButton14;
     // End of variables declaration//GEN-END:variables
 }
