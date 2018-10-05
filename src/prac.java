@@ -111,6 +111,7 @@ public class prac  {
 		if(s.contains("*"))pos=s.indexOf("*");
 		if(s.contains("/"))pos=s.indexOf("/");
 		if(s.contains("^"))pos=s.indexOf("^");
+		if(s.contains("%"))pos=s.indexOf("%");
 		if(pos==-1){
 		if(s.startsWith("m"))ans=(-1)*prac.parse(s.substring(1));
 		else ans=prac.parse(s);
