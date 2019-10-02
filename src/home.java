@@ -426,7 +426,7 @@ static boolean degree=false;
 
         bInv.setBackground(java.awt.Color.blue);
         bInv.setFont(new java.awt.Font("Ubuntu", 0, 25)); // NOI18N
-        bInv.setForeground(new java.awt.Color(255, 255, 255));
+        bInv.setForeground(new java.awt.Color(10, 10, 10));
         bInv.setText("INV");
         bInv.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -437,7 +437,7 @@ static boolean degree=false;
 
         bCent.setBackground(java.awt.Color.blue);
         bCent.setFont(new java.awt.Font("Ubuntu", 0, 25)); // NOI18N
-        bCent.setForeground(new java.awt.Color(255, 255, 255));
+        bCent.setForeground(new java.awt.Color(10, 10, 10));
         bCent.setText("%");
         bCent.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -448,7 +448,7 @@ static boolean degree=false;
 
         bDeg.setBackground(java.awt.Color.blue);
         bDeg.setFont(new java.awt.Font("Ubuntu", 0, 25)); // NOI18N
-        bDeg.setForeground(new java.awt.Color(255, 255, 255));
+        bDeg.setForeground(new java.awt.Color(10, 10, 10));
         bDeg.setText("DEG");
         bDeg.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -459,7 +459,7 @@ static boolean degree=false;
 
         bAsin.setBackground(new java.awt.Color(0, 0, 255));
         bAsin.setFont(new java.awt.Font("Ubuntu", 0, 25)); // NOI18N
-        bAsin.setForeground(new java.awt.Color(255, 255, 255));
+        bAsin.setForeground(new java.awt.Color(10, 10, 10));
         bAsin.setText("asin");
         bAsin.setToolTipText("");
         bAsin.setEnabled(false);
@@ -472,7 +472,7 @@ static boolean degree=false;
 
         bAcos.setBackground(new java.awt.Color(0, 0, 255));
         bAcos.setFont(new java.awt.Font("Ubuntu", 0, 25)); // NOI18N
-        bAcos.setForeground(new java.awt.Color(255, 255, 255));
+        bAcos.setForeground(new java.awt.Color(10, 10, 10));
         bAcos.setText("acos");
         bAcos.setEnabled(false);
         bAcos.addActionListener(new java.awt.event.ActionListener() {
@@ -484,7 +484,7 @@ static boolean degree=false;
 
         bAtan.setBackground(new java.awt.Color(0, 0, 255));
         bAtan.setFont(new java.awt.Font("Ubuntu", 0, 25)); // NOI18N
-        bAtan.setForeground(new java.awt.Color(255, 255, 255));
+        bAtan.setForeground(new java.awt.Color(10, 10, 10));
         bAtan.setText("atan");
         bAtan.setEnabled(false);
         bAtan.addActionListener(new java.awt.event.ActionListener() {
@@ -496,7 +496,7 @@ static boolean degree=false;
 
         bExp.setBackground(new java.awt.Color(0, 0, 255));
         bExp.setFont(new java.awt.Font("Ubuntu", 0, 25)); // NOI18N
-        bExp.setForeground(new java.awt.Color(255, 255, 255));
+        bExp.setForeground(new java.awt.Color(10, 10, 10));
         bExp.setText("exp");
         bExp.setEnabled(false);
         bExp.addActionListener(new java.awt.event.ActionListener() {
@@ -508,7 +508,7 @@ static boolean degree=false;
 
         bBtn.setBackground(new java.awt.Color(0, 0, 255));
         bBtn.setFont(new java.awt.Font("Ubuntu", 0, 25)); // NOI18N
-        bBtn.setForeground(new java.awt.Color(255, 255, 255));
+        bBtn.setForeground(new java.awt.Color(10, 10, 10));
         bBtn.setText("10^");
         bBtn.setEnabled(false);
         bBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -520,7 +520,7 @@ static boolean degree=false;
 
         bSqp.setBackground(new java.awt.Color(0, 0, 255));
         bSqp.setFont(new java.awt.Font("Ubuntu", 0, 25)); // NOI18N
-        bSqp.setForeground(new java.awt.Color(255, 255, 255));
+        bSqp.setForeground(new java.awt.Color(10, 10, 10));
         bSqp.setText("x^2");
         bSqp.setEnabled(false);
         bSqp.addActionListener(new java.awt.event.ActionListener() {
@@ -532,7 +532,7 @@ static boolean degree=false;
 
         bClr.setBackground(java.awt.Color.darkGray);
         bClr.setFont(new java.awt.Font("Ubuntu", 0, 25)); // NOI18N
-        bClr.setForeground(new java.awt.Color(255, 255, 255));
+        bClr.setForeground(new java.awt.Color(10, 10, 10));
         bClr.setText("CLR");
         bClr.setEnabled(false);
         bClr.setHideActionText(true);
@@ -545,7 +545,7 @@ static boolean degree=false;
 
         bRad.setBackground(new java.awt.Color(0, 0, 255));
         bRad.setFont(new java.awt.Font("Ubuntu", 0, 25)); // NOI18N
-        bRad.setForeground(new java.awt.Color(255, 255, 255));
+        bRad.setForeground(new java.awt.Color(10, 10, 10));
         bRad.setText("RAD");
         bRad.setEnabled(false);
         bRad.addActionListener(new java.awt.event.ActionListener() {
