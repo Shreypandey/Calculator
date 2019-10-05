@@ -112,7 +112,7 @@ static boolean degree=false;
                 b7ActionPerformed(evt);
             }
         });
-        getContentPane().add(b7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 100, 100));
+        getContentPane().add(b7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 175, 100, 100));
 
         b8.setBackground(java.awt.Color.black);
         b8.setFont(new java.awt.Font("Ubuntu", 0, 25)); // NOI18N
@@ -235,7 +235,7 @@ static boolean degree=false;
         });
         getContentPane().add(bEqual, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 480, 100, 100));
 
-        bDel.setBackground(java.awt.Color.darkGray);
+        bDel.setBackground(java.awt.Color.Gray);
         bDel.setFont(new java.awt.Font("Ubuntu", 0, 25)); // NOI18N
         bDel.setForeground(java.awt.Color.white);
         bDel.setText("DEL");
