@@ -112,7 +112,7 @@ static boolean degree=false;
                 b7ActionPerformed(evt);
             }
         });
-        getContentPane().add(b7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 100, 100));
+        getContentPane().add(b7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 175, 100, 100));
 
         b8.setBackground(java.awt.Color.black);
         b8.setFont(new java.awt.Font("Ubuntu", 0, 25)); // NOI18N
@@ -235,7 +235,7 @@ static boolean degree=false;
         });
         getContentPane().add(bEqual, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 480, 100, 100));
 
-        bDel.setBackground(java.awt.Color.darkGray);
+        bDel.setBackground(java.awt.Color.Gray);
         bDel.setFont(new java.awt.Font("Ubuntu", 0, 25)); // NOI18N
         bDel.setForeground(java.awt.Color.white);
         bDel.setText("DEL");
@@ -426,6 +426,8 @@ static boolean degree=false;
 
         bInv.setBackground(java.awt.Color.blue);
         bInv.setFont(new java.awt.Font("Ubuntu", 0, 25)); // NOI18N
+
+        bInv.setForeground(new java.awt.Color(10, 10, 10));
         bInv.setForeground(new java.awt.Color(10, 15, 20));
         bInv.setText("INV");
         bInv.addActionListener(new java.awt.event.ActionListener() {
@@ -437,6 +439,8 @@ static boolean degree=false;
 
         bCent.setBackground(java.awt.Color.blue);
         bCent.setFont(new java.awt.Font("Ubuntu", 0, 25)); // NOI18N
+
+        bCent.setForeground(new java.awt.Color(10, 10, 10));
         bCent.setForeground(new java.awt.Color(10, 15, 20));
         bCent.setText("%");
         bCent.addActionListener(new java.awt.event.ActionListener() {
@@ -448,6 +452,8 @@ static boolean degree=false;
 
         bDeg.setBackground(java.awt.Color.blue);
         bDeg.setFont(new java.awt.Font("Ubuntu", 0, 25)); // NOI18N
+
+        bDeg.setForeground(new java.awt.Color(10, 10, 10));
         bDeg.setForeground(new java.awt.Color(10, 15, 20));
         bDeg.setText("DEG");
         bDeg.addActionListener(new java.awt.event.ActionListener() {
@@ -459,6 +465,7 @@ static boolean degree=false;
 
         bAsin.setBackground(new java.awt.Color(0, 0, 255));
         bAsin.setFont(new java.awt.Font("Ubuntu", 0, 25)); // NOI18N
+        bAsin.setForeground(new java.awt.Color(10, 10, 10));
         bAsin.setForeground(new java.awt.Color(10, 15, 20));
         bAsin.setText("asin");
         bAsin.setToolTipText("");
@@ -472,6 +479,7 @@ static boolean degree=false;
 
         bAcos.setBackground(new java.awt.Color(0, 0, 255));
         bAcos.setFont(new java.awt.Font("Ubuntu", 0, 25)); // NOI18N
+        bAcos.setForeground(new java.awt.Color(10, 10, 10));
         bAcos.setForeground(new java.awt.Color(10, 15, 20));
         bAcos.setText("acos");
         bAcos.setEnabled(false);
@@ -484,6 +492,7 @@ static boolean degree=false;
 
         bAtan.setBackground(new java.awt.Color(0, 0, 255));
         bAtan.setFont(new java.awt.Font("Ubuntu", 0, 25)); // NOI18N
+        bAtan.setForeground(new java.awt.Color(10, 10, 10));
         bAtan.setForeground(new java.awt.Color(10, 15, 20));
         bAtan.setText("atan");
         bAtan.setEnabled(false);
@@ -496,6 +505,7 @@ static boolean degree=false;
 
         bExp.setBackground(new java.awt.Color(0, 0, 255));
         bExp.setFont(new java.awt.Font("Ubuntu", 0, 25)); // NOI18N
+        bExp.setForeground(new java.awt.Color(10, 10, 10));
         bExp.setForeground(new java.awt.Color(10, 15, 20));
         bExp.setText("exp");
         bExp.setEnabled(false);
@@ -508,6 +518,7 @@ static boolean degree=false;
 
         bBtn.setBackground(new java.awt.Color(0, 0, 255));
         bBtn.setFont(new java.awt.Font("Ubuntu", 0, 25)); // NOI18N
+        bBtn.setForeground(new java.awt.Color(10, 10, 10));
         bBtn.setForeground(new java.awt.Color(10, 15, 20));
         bBtn.setText("10^");
         bBtn.setEnabled(false);
@@ -520,6 +531,7 @@ static boolean degree=false;
 
         bSqp.setBackground(new java.awt.Color(0, 0, 255));
         bSqp.setFont(new java.awt.Font("Ubuntu", 0, 25)); // NOI18N
+        bSqp.setForeground(new java.awt.Color(10, 10, 10));
         bSqp.setForeground(new java.awt.Color(10, 15, 20));
         bSqp.setText("x^2");
         bSqp.setEnabled(false);
@@ -532,6 +544,7 @@ static boolean degree=false;
 
         bClr.setBackground(java.awt.Color.darkGray);
         bClr.setFont(new java.awt.Font("Ubuntu", 0, 25)); // NOI18N
+        bClr.setForeground(new java.awt.Color(10, 10, 10));
         bClr.setForeground(new java.awt.Color(10, 15, 20));
         bClr.setText("CLR");
         bClr.setEnabled(false);
@@ -545,6 +558,7 @@ static boolean degree=false;
 
         bRad.setBackground(new java.awt.Color(0, 0, 255));
         bRad.setFont(new java.awt.Font("Ubuntu", 0, 25)); // NOI18N
+        bRad.setForeground(new java.awt.Color(10, 10, 10));
         bRad.setForeground(new java.awt.Color(10, 15, 20));
         bRad.setText("RAD");
         bRad.setEnabled(false);
