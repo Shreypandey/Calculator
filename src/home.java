@@ -426,7 +426,9 @@ static boolean degree=false;
 
         bInv.setBackground(java.awt.Color.blue);
         bInv.setFont(new java.awt.Font("Ubuntu", 0, 25)); // NOI18N
+
         bInv.setForeground(new java.awt.Color(10, 10, 10));
+        bInv.setForeground(new java.awt.Color(10, 15, 20));
         bInv.setText("INV");
         bInv.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -437,7 +439,9 @@ static boolean degree=false;
 
         bCent.setBackground(java.awt.Color.blue);
         bCent.setFont(new java.awt.Font("Ubuntu", 0, 25)); // NOI18N
+
         bCent.setForeground(new java.awt.Color(10, 10, 10));
+        bCent.setForeground(new java.awt.Color(10, 15, 20));
         bCent.setText("%");
         bCent.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -448,7 +452,9 @@ static boolean degree=false;
 
         bDeg.setBackground(java.awt.Color.blue);
         bDeg.setFont(new java.awt.Font("Ubuntu", 0, 25)); // NOI18N
+
         bDeg.setForeground(new java.awt.Color(10, 10, 10));
+        bDeg.setForeground(new java.awt.Color(10, 15, 20));
         bDeg.setText("DEG");
         bDeg.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -460,6 +466,7 @@ static boolean degree=false;
         bAsin.setBackground(new java.awt.Color(0, 0, 255));
         bAsin.setFont(new java.awt.Font("Ubuntu", 0, 25)); // NOI18N
         bAsin.setForeground(new java.awt.Color(10, 10, 10));
+        bAsin.setForeground(new java.awt.Color(10, 15, 20));
         bAsin.setText("asin");
         bAsin.setToolTipText("");
         bAsin.setEnabled(false);
@@ -473,6 +480,7 @@ static boolean degree=false;
         bAcos.setBackground(new java.awt.Color(0, 0, 255));
         bAcos.setFont(new java.awt.Font("Ubuntu", 0, 25)); // NOI18N
         bAcos.setForeground(new java.awt.Color(10, 10, 10));
+        bAcos.setForeground(new java.awt.Color(10, 15, 20));
         bAcos.setText("acos");
         bAcos.setEnabled(false);
         bAcos.addActionListener(new java.awt.event.ActionListener() {
@@ -485,6 +493,7 @@ static boolean degree=false;
         bAtan.setBackground(new java.awt.Color(0, 0, 255));
         bAtan.setFont(new java.awt.Font("Ubuntu", 0, 25)); // NOI18N
         bAtan.setForeground(new java.awt.Color(10, 10, 10));
+        bAtan.setForeground(new java.awt.Color(10, 15, 20));
         bAtan.setText("atan");
         bAtan.setEnabled(false);
         bAtan.addActionListener(new java.awt.event.ActionListener() {
@@ -497,6 +506,7 @@ static boolean degree=false;
         bExp.setBackground(new java.awt.Color(0, 0, 255));
         bExp.setFont(new java.awt.Font("Ubuntu", 0, 25)); // NOI18N
         bExp.setForeground(new java.awt.Color(10, 10, 10));
+        bExp.setForeground(new java.awt.Color(10, 15, 20));
         bExp.setText("exp");
         bExp.setEnabled(false);
         bExp.addActionListener(new java.awt.event.ActionListener() {
@@ -509,6 +519,7 @@ static boolean degree=false;
         bBtn.setBackground(new java.awt.Color(0, 0, 255));
         bBtn.setFont(new java.awt.Font("Ubuntu", 0, 25)); // NOI18N
         bBtn.setForeground(new java.awt.Color(10, 10, 10));
+        bBtn.setForeground(new java.awt.Color(10, 15, 20));
         bBtn.setText("10^");
         bBtn.setEnabled(false);
         bBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -521,6 +532,7 @@ static boolean degree=false;
         bSqp.setBackground(new java.awt.Color(0, 0, 255));
         bSqp.setFont(new java.awt.Font("Ubuntu", 0, 25)); // NOI18N
         bSqp.setForeground(new java.awt.Color(10, 10, 10));
+        bSqp.setForeground(new java.awt.Color(10, 15, 20));
         bSqp.setText("x^2");
         bSqp.setEnabled(false);
         bSqp.addActionListener(new java.awt.event.ActionListener() {
@@ -533,6 +545,7 @@ static boolean degree=false;
         bClr.setBackground(java.awt.Color.darkGray);
         bClr.setFont(new java.awt.Font("Ubuntu", 0, 25)); // NOI18N
         bClr.setForeground(new java.awt.Color(10, 10, 10));
+        bClr.setForeground(new java.awt.Color(10, 15, 20));
         bClr.setText("CLR");
         bClr.setEnabled(false);
         bClr.setHideActionText(true);
@@ -546,6 +559,7 @@ static boolean degree=false;
         bRad.setBackground(new java.awt.Color(0, 0, 255));
         bRad.setFont(new java.awt.Font("Ubuntu", 0, 25)); // NOI18N
         bRad.setForeground(new java.awt.Color(10, 10, 10));
+        bRad.setForeground(new java.awt.Color(10, 15, 20));
         bRad.setText("RAD");
         bRad.setEnabled(false);
         bRad.addActionListener(new java.awt.event.ActionListener() {
@@ -575,14 +589,14 @@ bSin.setVisible(true);bSin.setEnabled(true);
         bBtn.setVisible(false);bBtn.setEnabled(false);
         bClr.setVisible(false);bClr.setEnabled(false);
         bRad.setVisible(false);bRad.setEnabled(false);
-        
+
 }
     private void b5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b5ActionPerformed
         bClr.setVisible(false);bClr.setEnabled(false);
         bDel.setVisible(true);bDel.setEnabled(true);
         calExp+="5";
         newExp+="5";
-        fExp.setText(newExp); 
+        fExp.setText(newExp);
         prac.nl=0;prac.nr=0;
         fAns.setText(""+prac.calculate(calExp));// TODO add your handling code here:
     }//GEN-LAST:event_b5ActionPerformed
@@ -712,12 +726,12 @@ bSin.setVisible(true);bSin.setEnabled(true);
         bDel.setVisible(true);bDel.setEnabled(true);
         if(newExp.endsWith("+")||newExp.endsWith("-")||newExp.endsWith("×")||newExp.endsWith("÷")||newExp.endsWith("^")){
           newExp=newExp.substring(0, newExp.length()-1)+"÷";
-       calExp=calExp.substring(0, calExp.length()-1)+"/";         
+       calExp=calExp.substring(0, calExp.length()-1)+"/";
       }
        else
       { calExp+="/";
         newExp+="÷";
-      } 
+      }
       fExp.setText(newExp); // TODO add your handling code here:
     }//GEN-LAST:event_bDivideActionPerformed
 
@@ -755,12 +769,12 @@ bSin.setVisible(true);bSin.setEnabled(true);
         bDel.setVisible(true);bDel.setEnabled(true);
         if(newExp.endsWith("+")||newExp.endsWith("-")||newExp.endsWith("×")||newExp.endsWith("÷")||newExp.endsWith("^")){
        newExp=newExp.substring(0, newExp.length()-1)+"+";
-       calExp=calExp.substring(0, calExp.length()-1)+"+";         
+       calExp=calExp.substring(0, calExp.length()-1)+"+";
         }
         else{
         newExp+="+";
        calExp+="+";}
-        fExp.setText(newExp);  
+        fExp.setText(newExp);
     }//GEN-LAST:event_bPlusActionPerformed
 
     private void bHistoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bHistoryActionPerformed
@@ -785,7 +799,7 @@ new history().setVisible(true);
       calExp=newExp;
       bClr.setVisible(true);bClr.setEnabled(true);
       bDel.setVisible(false);bDel.setEnabled(false);
-          
+
     }//GEN-LAST:event_bEqualActionPerformed
 
     private void bEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bEActionPerformed
@@ -805,7 +819,7 @@ new history().setVisible(true);
         newExp+="π";
         fExp.setText(newExp);
         prac.nl=0;prac.nr=0;
-        fAns.setText(""+prac.calculate(calExp));        
+        fAns.setText(""+prac.calculate(calExp));
     }//GEN-LAST:event_bPieActionPerformed
 
     private void bPowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bPowActionPerformed
@@ -813,13 +827,13 @@ new history().setVisible(true);
         bDel.setVisible(true);bDel.setEnabled(true);
         if(newExp.endsWith("+")||newExp.endsWith("-")||newExp.endsWith("×")||newExp.endsWith("÷")||newExp.endsWith("^")){
        newExp=newExp.substring(0, newExp.length()-1)+"^";
-       calExp=calExp.substring(0, calExp.length()-1)+"^";         
+       calExp=calExp.substring(0, calExp.length()-1)+"^";
         }
         else{
         newExp+="^";
         calExp+="^";
         }
-       fExp.setText(newExp);  
+       fExp.setText(newExp);
     }//GEN-LAST:event_bPowActionPerformed
 
     private void bBraceLeftActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bBraceLeftActionPerformed
@@ -949,7 +963,7 @@ new history().setVisible(true);
         fExp.setText(newExp);
         prac.nl=0;prac.nr=0;
         fAns.setText(""+prac.calculate(calExp));
-        
+
     }//GEN-LAST:event_bAsinActionPerformed
 
     private void bAcosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAcosActionPerformed
@@ -971,7 +985,7 @@ new history().setVisible(true);
         fExp.setText(newExp);
         prac.nl=0;prac.nr=0;
         fAns.setText(""+prac.calculate(calExp));
-        
+
     }//GEN-LAST:event_bAtanActionPerformed
 
     private void bExpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bExpActionPerformed
@@ -1062,7 +1076,7 @@ new history().setVisible(true);
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
